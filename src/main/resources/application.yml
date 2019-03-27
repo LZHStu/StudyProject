@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+person:
+  lastName: zhangsan
+  age: 18
+  boss: false
+  birth: 2019/3/19
+  maps: {k1: v1,k2: 12}
+  lists:
+    - lisi
+    - zhaoliu
+
+  dog:
+    name: 小狗
+    age: 2
+
+spring:
+  profiles.active: dev
+---
+spring:
+  profiles: dev
+log:
+  path: ./logs
+  level: debug
+---
+spring:
+  profiles: test
+log:
+  path: /home/user/logs/
+  level: info
+
+#logging:
+#  config: classpath:logback-spring.xml
+#  level:
+#    dao: debug
+#    org:
+#      mybatis: debug
+#spring:
+#  profiles:
+#    #指定读取配置文件:dev(开发环境),prod(生产环境),qa(测试环境)
+#    active: qa
+#
+##日志
+#logging:
+#  config: classpath:logback-${spring.profiles.active}.xml
